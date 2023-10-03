@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+
+    <!-- Incluye los archivos CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="display-4 text-center mb-4 fw-bold">LISTA DE PRODUCTOS</h1>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark text-center">
+            <tr>
+                <th scope="col">Código Producto</th>
+                <th scope="col">Nombre Producto</th>
+                <th scope="col">Precio Producto</th>
+                <th scope="col">Cantidad Producto</th>
+                <th scope="col">Ganancias Producto</th>
+                <th scope="col">Descuento Producto</th>
+                <th scope="col">Ganancia con Descuento Producto</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="producto :${listarProducto}" class="fw-bold">
+                <td th:text="${producto.codproducto}" class="text-center"></td>
+                <td th:text="${producto.nomproducto}" class="text-center"></td>
+                <td th:text="${producto.preproducto}" class="text-center"></td>
+                <td th:text="${producto.canproducto}" class="text-center"></td>
+                <td th:text="${producto.ganancias}" class="text-center"></td>
+                <td th:text="${producto.descuento}" class="text-center"></td>
+                <td th:text="${producto.gananciadescuento}" class="text-center"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Incluye los archivos JavaScript de Bootstrap al final del body -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

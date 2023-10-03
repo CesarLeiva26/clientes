@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>App Cibertec</title>
+    <!-- Enlaces a tus archivos CSS -->
+    <link th:href="@{/styles/bootstrap/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/fontawesome/all.css}" rel="stylesheet"/>
+    <!-- Enlaces a tus archivos JavaScript -->
+    <script th:src="@{/scripts/jquery/jquery.js}" type="text/javascript"></script>
+    <script th:src="@{/scripts/bootstrap/bootstrap.bundle.js}" type="text/javascript"></script>
+    <script th:src="@{/scripts/web/backoffice/cliente/frmcliente.js}" type="text/javascript"></script>
+</head>
+<body>
+<nav th:fragment="menu" class="navbar navbar-expand-lg bg-primary">
+    <div class="container">
+        <!-- Logo o título -->
+        <a class="navbar-brand" href="#">App Cibertec</a>
+
+        <!-- Botón de menú desplegable en pantallas pequeñas -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú de navegación -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorías
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" th:href="@{/cliente}">Clientes</a>
+                        <a class="dropdown-item" th:href="@{/producto}">Productos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido principal de la página -->
+<div class="container mt-4">
+    <!-- Aquí puedes agregar tu contenido principal -->
+    <!-- Por ejemplo, una sección con un título -->
+    <h1>Bienvenido a la App Cibertec</h1>
+    <p>Esta es la página de inicio de nuestra aplicación.</p>
+</div>
+
+<!-- Pie de página -->
+<footer class="bg-primary text-white text-center py-3">
+    <div class="container">
+        © 2023 App Cibertec. Todos los derechos reservados.
+    </div>
+</footer>
+</body>
+</html>
